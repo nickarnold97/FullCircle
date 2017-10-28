@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FullCircle</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+	<h1>FullCircle</h1>
+	<form method = "POST">
+
+		<div>
+		<h3> Amount of Calories to Burn: </h3>
+		<input type = "number" name = "calories" placeholder="100" required>
+		<label> cal </label>
+		</div>
+
+		<div>
+		<h3> Distance to Run </h3>
+		<input type = "number" name = "distance" placeholder="3" required>
+		<label> km </label>
+		</div>
+
+		<div>
+		<h3> Area </h3>
+		<label for = "river"> Near River </label>
+		<input name = "area" type = "radio" id = "river" value = "River">
+		<label for = "mountain"> Mountain Terrain </label>
+		<input name = "area" type = "radio" id = "mountain" value = "Mountain">
+		<label for = "hill"> High Incline </label>
+		<input name = "area" type = "radio" id = "hill" value = "Hill">
+		</div>
+
+		<button id = "findRoute"> Find Route </button>
+	</form>
+
+	<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+	<div id="map"></div>
+	<script type="text/javascript" src = "googlemap.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1QPHdzPFF0IdrpJODu3XQQsqE_TBxslU&callback=initMap"
+    async defer></script>
+
+</body>
+</html>
