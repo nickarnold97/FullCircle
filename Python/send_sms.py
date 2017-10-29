@@ -3,6 +3,8 @@ from twilio.rest import Client
 from flask import request
 from twilio.twiml.messaging_response import MessagingResponse
 
+import re
+
 app = Flask(__name__)
 
 account_sid = "AC07e0d1e1abc8f066bf7bc4b993cde73c"
@@ -38,21 +40,26 @@ def hello_user():
     #flag = True
     respo = MessagingResponse()
     #respo.message("{}, thanks for the message!".format(message2))
+    arr = []
 
     #Error handling, checking if the user inputs "miles" etc
     #while flag:    
     if "miles" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
-            
+        arr = re.findall(r"[-+]?\d*\.\d+|\d+", str(msg_body))
+        print(arr)
     elif "mi" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
-            
+        arr = re.findall(r"[-+]?\d*\.\d+|\d+", str(msg_body))
+        print(arr)   
     elif "km" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
-            
+        arr = re.findall(r"[-+]?\d*\.\d+|\d+", str(msg_body))
+        print(arr)    
     elif "kilometers" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
-            
+        arr = re.findall(r"[-+]?\d*\.\d+|\d+", str(msg_body))
+        print(arr)    
     else:
         respo.message("{}, wrong inputs!".format(message2))
 
