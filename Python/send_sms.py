@@ -32,12 +32,45 @@ def hello_user():
     msg_body = request.values.get('Body', None)
     print(from_number)
     print(msg_body)
+
+    message2 = callers[from_number] if from_number in callers else "Monkey"
+
+    #flag = True
+    respo = MessagingResponse()
+    #respo.message("{}, thanks for the message!".format(message2))
+
+    #Error handling, checking if the user inputs "miles" etc
+    #while flag:    
+    if "miles" in msg_body:
+        respo.message("{}, thanks for the correct inputs!".format(message2))
+            
+    elif "mi" in msg_body:
+        respo.message("{}, thanks for the correct inputs!".format(message2))
+            
+    elif "km" in msg_body:
+        respo.message("{}, thanks for the correct inputs!".format(message2))
+            
+    elif "kilometers" in msg_body:
+        respo.message("{}, thanks for the correct inputs!".format(message2))
+            
+    else:
+        respo.message("{}, wrong inputs!".format(message2))
+
+    return str(respo)
+
+    '''
     message = callers[from_number] if from_number in callers else "Monkey"
 
     resp = MessagingResponse()
     resp.message("{}, thanks for the message!".format(message))
 
     return str(resp)
+    '''
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
