@@ -23,10 +23,6 @@
         region: "us-east-1",
         // accessKeyId default can be used while using the downloadable version of DynamoDB. 
         // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-        accessKeyId: "AKIAIFDM5QN34KFRSBCQ",
-        // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
-        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-        secretAccessKey: "SbOe5H6fmlwYekzNXYcAK4vA7FGsEbteUR07hSGy"
       });
 
       function getQueryVariable(variable){
@@ -45,7 +41,7 @@
         TableName : 'UserData',
         Key: {
           'Phonenumber': {
-            S: "+16176948759",
+            S: "+16175155778",
           }
         }
       }; 
