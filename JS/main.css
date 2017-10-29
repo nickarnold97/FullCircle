@@ -26,16 +26,20 @@
         padding-left: 10px;
       }*/
 
+<<<<<<< HEAD
 img{
   width: 170px;
   height: 120px;
   margin-left: px;
 }
+=======
+>>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
       #submit {
       	text-align: center;
       	position: absolute;; 
       	font-family: 'Roboto','sans-serif'; 
       }
+<<<<<<< HEAD
 
       body{
         background: #00CC99;
@@ -52,3 +56,5 @@ img{
         font-size:7em;
         font-family: 'Playfair Display', serif;
       }
+=======
+>>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46

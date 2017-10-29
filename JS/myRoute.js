@@ -114,7 +114,11 @@
           }
         }); 
         distance += google.maps.geometry.spherical.computeDistanceBetween (userMarker[userMarker.length-2].position, userMarker[userMarker.length-1].position); 
+<<<<<<< HEAD
         document.getElementById('warnings-panel').innerHTML = '<strong> Distance: <strong>' + Math.max(Math.round(distance/100)/10,0).toFixed(2) +' km'; 
+=======
+        document.getElementById('warnings-panel').innerHTML = '<b> Distance: ' + Math.round(distance/1000).toFixed(2) +' km</b>'; 
+>>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
       }
 
       function calculateAndDisplayRoute(directionsDisplay, directionsService,

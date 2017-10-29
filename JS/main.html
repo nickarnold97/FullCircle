@@ -4,6 +4,7 @@
 	<title>FullCircle</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<<<<<<< HEAD
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
@@ -11,6 +12,17 @@
 	<link rel="stylesheet" type = "text/css" href = "main.css">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 <body>
+=======
+	<link rel="stylesheet" type = "text/css" href = "main.css">
+<body>
+	<h1>FullCircle</h1>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 	<form method = "POST">
+>>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
 
 	<div class = "container">
 		<div class = "row">
@@ -24,6 +36,7 @@
 					<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/				bootstrap.min.js"></script>
 
 
+<<<<<<< HEAD
 
 					<form action="myRoute.html">
 						<button id = myRoute class = "btn btn-success btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Choose My Own Route</button>
@@ -48,6 +61,32 @@
 			</div>
 		</div>
 	</div>
+=======
+		<button id = "findRoute"> Find Route </button>
+	</form> -->
+
+	<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<div id="map"></div>
+	<div id = "floating-panel"></div>
+	<div id = "directions"></div>
+	<script type="text/javascript" src = "generateRoute.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1QPHdzPFF0IdrpJODu3XQQsqE_TBxslU&callback=initMap"
+    async defer></script>
+>>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
+
+    <div id = submit>
+    	<form action="myRoute.html">
+		<button>Choose My Own Route</button>
+		</form>
+<!-- 		<label for = "distance">Distance: </label>
+		<input name = "Distance" id = "distance type = "text" placeholder = "5"> 
+		<label> km </label>
+		<input id = inputDistance type = button value = "submit"> -->
+    	<input id = run type = button value = "Let's Run!!!"> 
+	</div>
+	<div id="warnings-panel"></div>
 
 </body>
 </html>
