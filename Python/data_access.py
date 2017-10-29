@@ -27,7 +27,6 @@ def retreive_user(phonenumber):
 		return None
 
 
-
 #create_user('+16508633802','Nick',{'42.351083','-71.110179'})
 pablo = '+16175155778'
 nick = '+16508633802'
@@ -36,10 +35,9 @@ nickDB = retreive_user(nick)
 
 
 if(pabloDB is not None):
-	coords = pabloDB['Coordinates']
-	it = iter(coords)
-	lat = iter(coords)
-	long = next(it)
+	coords = list(pabloDB['Coordinates'])
+	lat = coords[0]
+	long = coords[1]
 	print('Pablo is at '+str(lat)+", "+str(long))
 else:
 	print('Couldnt find that bitch..... will add')
