@@ -41,16 +41,16 @@ def hello_user():
 
     #Error handling, checking if the user inputs "miles" etc
     #while flag:    
-    if "miles" in msg_body:
+    if "miles" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
             
-    elif "mi" in msg_body:
+    elif "mi" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
             
-    elif "km" in msg_body:
+    elif "km" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
             
-    elif "kilometers" in msg_body:
+    elif "kilometers" in str(msg_body):
         respo.message("{}, thanks for the correct inputs!".format(message2))
             
     else:
