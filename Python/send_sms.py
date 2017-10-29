@@ -10,11 +10,12 @@ auth_token  = "37aa55f8cbae672f3e10e1d080321830"
 
 client = Client(account_sid, auth_token)
 
-message = client.messages.create(
-    to="+16176948759", 
+"""message = client.messages.create(
+    to="+16175155778", 
     from_="+16175051429",
-    body="Hello from Python!")
+    body="Hello from the script!")"""
 
+#https://4d620adc.ngrok.io 
 @app.route("/", methods=['GET', 'POST'])
 def hello_user():
     """Respond and greet the caller by name."""
@@ -24,6 +25,7 @@ def hello_user():
         "+14158675310": "Boots",
         "+14158675311": "Virgil",
         "+16176948759": "Gene",
+        "+16175155778": "Pablo",
     }
     
     from_number = request.values.get('From', None)
