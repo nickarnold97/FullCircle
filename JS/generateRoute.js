@@ -14,7 +14,6 @@
       var distance; 
       var marker1; 
       var marker2; 
-<<<<<<< HEAD
       var phoneNumber; 
 
       var domainString = document.domain;
@@ -66,12 +65,6 @@
 
       function initMap() {
         // distance = prompt("How many kilometers are you running?")
-=======
-
-
-      function initMap() {
-        distance = prompt("How many kilometers are you running?")
->>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
         //Instantiate a directions service. 
         var directionsService = new google.maps.DirectionsService; 
         //Create a renderer for directions and bind it to the map.
@@ -126,13 +119,6 @@
           map: map
         });
         userMarker.push(marker); 
-<<<<<<< HEAD
-=======
-        if(userMarker.length){
-          alert("pushed");
-          alert(marker.position);  
-        }
->>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
       }
   
 
@@ -140,12 +126,6 @@
           markerArray, stepDisplay, map) {
         // Retrieve the start and end locations and create a DirectionsRequest using
         // WALKING directions.
-<<<<<<< HEAD
-=======
-        if(!userMarker.length){
-          alert("userMarker is not there"); 
-        }
->>>>>>> de49055049dceab809c0c8ecfcd2648b6c6f6f46
         directionsService.route({
           origin: userMarker[0].position,
           destination: userMarker[1].position,
