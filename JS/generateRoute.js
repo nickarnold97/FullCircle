@@ -23,10 +23,10 @@
         region: "us-east-1",
         // accessKeyId default can be used while using the downloadable version of DynamoDB. 
         // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-        accessKeyId: "AKIAIT26CPULRDUETWTA",
+        accessKeyId: "AKIAIFDM5QN34KFRSBCQ",
         // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
         // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-        secretAccessKey: "GlIsJfCHlnz3Ha9RIwNd0IOfE7oHDJ4oZNbkKxSu"
+        secretAccessKey: "SbOe5H6fmlwYekzNXYcAK4vA7FGsEbteUR07hSGy"
       });
 
       function getQueryVariable(variable){
