@@ -14,10 +14,57 @@
       var distance; 
       var marker1; 
       var marker2; 
+      var phoneNumber; 
+
+      var domainString = document.domain;
+      console.log(domainString);
+
+      AWS.config.update({
+        region: "us-east-1",
+        // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+        accessKeyId: "AKIAIT26CPULRDUETWTA",
+        // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+        // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+        secretAccessKey: "GlIsJfCHlnz3Ha9RIwNd0IOfE7oHDJ4oZNbkKxSu"
+      });
+
+      function getQueryVariable(variable){
+        var query = window.location.search.substring(1); 
+        var vars = query.split("&"); 
+        for(var i = 0; i < vars.length; i++){
+          var pair = vars[i].split("="); 
+          if(pair[0] == variable){return pair[1];}
+        }
+        return(false); 
+      }
+      phoneNumber = getQueryVariable("id"); 
+
+      var ddb = new AWS.DynamoDB({apiVersion:'2012-10-08'}); 
+      var params = {
+        TableName : 'UserData',
+        Key: {
+          'Phonenumber': {
+            S: "+16176948759",
+          }
+        }
+      }; 
+
+      ddb.getItem(params,function(err,data){
+        if(err){
+          console.log("Error",err);
+        } else {
+          console.log("Success",data); 
+        }
+        distance = data.Item.Distance.S; 
+        console.log(distance);
+        console.log(data.Item.Name.S); 
+        document.getElementById("retrieve-alert").innerHTML = '<strong> Hello ' + data.Item.Name.S + '</strong>, you will run ' + distance + ' km '; 
+      }); 
 
 
       function initMap() {
-        distance = prompt("How many kilometers are you running?")
+        // distance = prompt("How many kilometers are you running?")
         //Instantiate a directions service. 
         var directionsService = new google.maps.DirectionsService; 
         //Create a renderer for directions and bind it to the map.
@@ -72,10 +119,6 @@
           map: map
         });
         userMarker.push(marker); 
-        if(userMarker.length){
-          alert("pushed");
-          alert(marker.position);  
-        }
       }
   
 
@@ -83,9 +126,6 @@
           markerArray, stepDisplay, map) {
         // Retrieve the start and end locations and create a DirectionsRequest using
         // WALKING directions.
-        if(!userMarker.length){
-          alert("userMarker is not there"); 
-        }
         directionsService.route({
           origin: userMarker[0].position,
           destination: userMarker[1].position,

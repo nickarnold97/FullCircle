@@ -26,17 +26,12 @@
         padding-left: 10px;
       }*/
 
-img{
-  width: 170px;
-  height: 120px;
-  margin-left: px;
-}
       #submit {
       	text-align: center;
       	position: absolute;; 
       	font-family: 'Roboto','sans-serif'; 
+      	margin-left: 60px;
       }
-
       body{
         background: #00CC99;
         background: cover;
@@ -50,5 +45,6 @@ img{
       h1{
         color:white;
         font-size:7em;
-        font-family: 'Playfair Display', serif;
+        font-family: 'Modak,cursive';
+        margin-left: 60px;
       }
