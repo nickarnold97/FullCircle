@@ -2,6 +2,7 @@ from Python import data_access
 from flask import Flask, request, session
 from twilio.rest import Client
 from twilio.twiml.messaging_response import MessagingResponse
+import decimal
 from datetime import datetime, timedelta
 
 import re
@@ -10,7 +11,7 @@ SECRET_KEY = 'a secret key'  # change this to something appropriate
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# Configure Twilio account with public key tied to Pablo Ferreyra's debit card
+# Configure Twilio account with public key
 
 account_sid = "AC07e0d1e1abc8f066bf7bc4b993cde73c"
 auth_token = "37aa55f8cbae672f3e10e1d080321830"
@@ -39,6 +40,11 @@ def hello_user():
 	sender_num = request.values.get('From', None)  # number text recieved from
 	sender_msg = request.values.get('Body', None)  # message body of text
 	user = data_access.retreive_user(sender_num)  # name lookup in database
+
+	# Second url for the web app to get the phone number in order to know which user the web service needs to speak to.
+	url2 = "http://www.example.com/index.php?id=%s" % str(sender_num)
+
+
 
 	respo = MessagingResponse()
 	if counter == 1 and user is not None:  # Returning user first text
@@ -104,8 +110,10 @@ def hello_user():
 
 	distance = round(distance, 1)  # 1 decimal place
 
+	data_access.update_dist(sender_num, str(distance))
+
 	# After user entered running details generate route with variable 'distance'
-	respo.message("Generating a route for you!")
+	respo.message("Generating a route for you! %s" % url2)
 	return str(respo)
 
 
