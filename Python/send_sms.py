@@ -24,6 +24,8 @@ client = Client(account_sid, auth_token)
 def hello_user():
     """Respond and greet the caller by name."""
 
+    
+
     counter = session.get('counter', 0)
 
     counter += 1
@@ -51,10 +53,18 @@ def hello_user():
 
     #flag = True
     respo = MessagingResponse()
-    if(counter==1):
-        respo.message("{}, welcome back! How far are you running today?".format(message2))
+    if(counter==1 and (from_number in callers)):
+        respo.message("Welcome back {}! How far are you running today?".format(message2))
         return str(respo)
-
+    elif(counter==1 and (from_number not in callers)):
+        respo.message("Welcome to FullCircle! Please send us your name")
+        return str(respo)
+    elif(counter==2 and (from_number not in callers)):
+        # save from_number,msg_body to database
+        respo.message("Thanks, you have been successfully registered!")
+        session['counter'] = 0
+        return str(respo)
+    
     arr = []
     unit = ""
     distance = 0.0
